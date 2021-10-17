@@ -52,7 +52,7 @@ function showMovieModal(id){
 function removeFromFavorite(id) {
   if(!movies.length) return //收藏清單是空的就結束
   const index = movies.findIndex(movie => movie.id === id) //透過 id 找到要刪除電影的 index
-  if(movieIndex === -1) return
+  if(index === -1) return
   movies.splice(index, 1) //splice(index, 1) => 從第index個刪除一筆
   localStorage.setItem('favoriteMovies', JSON.stringify(movies))
   renderMovieList(movies)
